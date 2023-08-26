@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Playfair Display', serif;
+}
+
+.app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid__container {
+  display: grid;
+  width: 100%;
+  height: 150vh;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(18, 70);
+  gap: 1rem;
+  place-items: center;
+}
+
+.grid__container.light {
+  color: #333;
+}
+
+.grid__container.dark {
+  background-color: #333;
+  color: #fff;
+}
+
+.item1 {
+  grid-row: 1 / 2;
+  height: 100%;
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 1rem;
+  padding-top: 1rem;
+  margin: 1rem 0;
+}
+
+.logo {
+  margin-inline-start: 1rem;
+  color: rgb(193, 190, 190);
+
+}
+
+.settings {
+  display: flex;
+  margin-inline: 1rem;
+  gap: 1rem;
+}
+
+.item2 {
+  grid-row: 2 / 4;
+  height: 95%;
+  width: 70%;
+  text-align: center;
+}
+
+input {
+  width: 80%;
+  height: 60px;
+  border-radius: 13px;
+  background-color: rgb(236, 231, 231);
+  border: none;
+  padding-inline-start: 1rem;
+  font-size: 1rem;
+}
+
+input:focus {
+  outline: none;
+}
+
+.fa-toggle-off,
+.fa-toggle-on {
+  cursor: pointer;
+}
+
+.item3 {
+  grid-row: 4 / 7;
+  height: 95%;
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 1rem;
+}
+
+.item4 {
+  grid-row: 7 / 8;
+  height: 95%;
+  width: 70%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 2rem;
+}
+
+.noun {
+  font-weight: 600;
+  font-style: italic;
+  font-size: 17px;
+}
+
+.line {
+  margin-inline-start: 3.5rem;
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  width: 90%;
+  height: .5px;
+  background-color: black;
+  content: '';
+}
+
+.item5 {
+  height: 100%;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1rem;
+}
+
+.item5 h4 {
+  margin-left: 1rem;
+  font-size: 20px;
+}
+
+.meanings__list {
+  margin-left: 3rem;
+}
+
+.list__item {
+  padding-left: 3rem;
+  padding-right: 1rem;
+  text-align: left;
+}
+
+.item6 {
+  grid-row: 11 / 13;
+  height: 95%;
+  width: 70%;
+  display: flex;
+  gap: 1rem;
+}
+
+.synonyms__fetched {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+}
+
+.item9 {
+  grid-row: 14 / 15;
+  height: 95%;
+  width: 70%;
+  margin-bottom: 1rem;
+}
+
+.main__word {
+  font-size: 32px;
+}
+
+.prononciation {
+  font-size: 20px;
+  color: purple;
+}
+
+.play__button {
+  color: purple;
+  border-radius: 50%;
+  height: 5rem;
+  width: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  background-color: lightgray;
+  border: none;
+  cursor: pointer;
+}
+
+.play__button:hover {
+  background-color: rgb(220, 214, 214);
+}
+
+@media (max-width: 700px) {
+  .play__button {
+    height: 3.5rem;
+    width: 3.5rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
+  }
+
+  .grid__container {
+    width: 100%;
+    height: 150vh;
+  }
+}
+
+@media (max-width: 530px) {
+  .play__button {
+    margin-left: 1rem;
+    height: 3rem;
+    width: 3rem;
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+
+  body {
+    font-size: 14px;
+  }
+
+  .app {
+    padding: 0;
+  }
+
+  .grid__container {
+    grid-template-columns: 1fr;
+  }
+
+  .main__word {
+    font-size: 24px;
+    margin-right: .5rem;
+  }
+
+  .play__button {
+    height: 2.5rem;
+    width: 3em;
+    margin-top: 1.1rem;
+    margin-left: 1rem;
+  }
+
+  .fa-play {
+    height: 2rem;
+    width: 2rem;
+    margin-top: 1.8rem;
+    margin-left: .2rem;
+  }
+
+  .line {
+    width: 75%;
+  }
+}
+
+@media (max-width: 370px) {
+
+  .app {
+    /* margin-left: -.6rem; */
+  }
+
+
+  body {
+    font-size: 12px;
+  }
+
+  .grid__container {
+    grid-template-columns: .5fr;
+  }
+
+  .main__word {
+    font-size: 22px;
+  }
+
+  .play__button {
+    height: 2.5rem;
+    width: 3rem;
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .fa-play {
+    height: 2.7rem;
+    width: 2rem;
+    margin-top: 2.4rem;
+  }
+
+  input {
+    height: 40px;
+  }
+
+  .line {
+    width: 70%;
+  }
+}
